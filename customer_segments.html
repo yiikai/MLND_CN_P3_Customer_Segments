@@ -13577,7 +13577,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>回答:</strong>Detergents_Paper 0.714  必要，R2越高说明拟合越好，特征对于区分用户的消费习惯关系越大</p>
+<p><strong>回答:</strong>Detergents_Paper 0.714  必要，R2越高说明拟合越好，说明该变量可以通过其他变量来预测.所以Detergents_Paper对于消费习惯来说没有必要，别的特征也可以表示</p>
 
 </div>
 </div>
@@ -13719,7 +13719,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 展示经过对数变换后的样本数据</span>
@@ -13825,7 +13825,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 对于每一个特征，找到值异常高或者是异常低的数据点</span>
@@ -14618,7 +14618,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>回答:</strong>[66,128,75,154] 需要移除，异常数据点容易影响模型训练造成偏差。</p>
+<p><strong>回答:</strong>[66,128,75,154] 需要移除，异常数据点容易影响模型训练造成偏差。对于多余一个特征下被看做异常点的数据点，说明本身数据是在多特征下都是异常的所以可以认为是一个明确的异常点，但是如果将别的只有一个特征下被视为异常点会导致数据不完整，应为太多的数据被删除，会导致训练数据的时候产生偏差</p>
 
 </div>
 </div>
@@ -14646,7 +14646,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># TODO：通过在good data上进行PCA，将其转换成6个维度</span>
@@ -14723,7 +14723,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 展示经过PCA转换的sample log-data</span>
@@ -14826,7 +14826,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># TODO：通过在good data上进行PCA，将其转换成两个维度</span>
@@ -14857,7 +14857,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 展示经过两个维度的PCA转换之后的样本log-data</span>
@@ -14939,7 +14939,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 可视化双标图</span>
@@ -14956,13 +14956,13 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[14]:</div>
+    <div class="prompt output_prompt">Out[16]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fc5834c8c18&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fb56ef85ba8&gt;</pre>
 </div>
 
 </div>
@@ -15049,7 +15049,7 @@ GMM
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># TODO：在降维后的数据上使用你选择的聚类算法</span>
@@ -15105,7 +15105,11 @@ GMM
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>回答:</strong>2</p>
+<p><strong>回答:</strong> 2: 0.4 
+       3:0.39943
+       4:0.29864
+       5:0.33529715544
+       所以选择 聚类数为2</p>
 
 </div>
 </div>
@@ -15120,7 +15124,7 @@ GMM
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 从已有的实现中展示聚类的结果</span>
@@ -15169,7 +15173,7 @@ GMM
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># TODO：反向转换中心点</span>
@@ -15268,7 +15272,7 @@ GMM
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>回答:</strong>成分0主要做零食杂货类， 成分1 主要做新鲜冷冻类食物</p>
+<p><strong>回答:</strong>成分0在Milk和Grocery都在四分位处，别的数据都在中位数左右而且低于平均值很多，所以判断主要做零食杂货类， 成分1 在fresh和frozen都超过了中位数而且都接近于平均需求量所以判断主要做新鲜冷冻类食物</p>
 
 </div>
 </div>
@@ -15284,7 +15288,7 @@ GMM
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 显示预测结果</span>
@@ -15345,7 +15349,7 @@ Sample point 2 predicted to be in Cluster 1
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>回答：</strong>可以将所有客户分别在两中派送服务下收集订货数据，然后分类，划分出积极和不积极的两类数据。</p>
+<p><strong>回答：</strong>客户已经分为了2类，现在可以对每一类的用户，分别划分为2部分，一部分用A方案测试，一部分用B方案测试。分别记录不同类别下，客户对于AB两个方案那个反馈积极。 然后将两个类中反馈积极的相互比较，获取最积极的那个类别。</p>
 
 </div>
 </div>
@@ -15361,7 +15365,7 @@ Sample point 2 predicted to be in Cluster 1
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="k">import</span> <span class="n">RandomForestClassifier</span>
